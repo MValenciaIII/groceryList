@@ -21,29 +21,37 @@
                 </div>
             </div>
         </div>
+        <nav>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p id="checkout">0</p>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
                     <p>Milk $3.99</p>
-                    <button onclick="addCart('milk', 3.99)">Add To Cart</button>
+                    <button onclick="addCart('milk', 3.99, 1)">Add To Cart</button>
                 </div>
                 <div class="col-sm-3">
                     <p>Oscar Myers Hot dogs $4.99</p>
-                    <button onclick="addCart('hotDogs', 4.99)">Add To Cart</button>
+                    <button onclick="addCart('hotDogs', 4.99, 1)">Add To Cart</button>
                 </div>
                 <div class="col-sm-3">
                     <p>Hot Dog Buns $2.99</p>
-                    <button onclick="addCart('hotDogBuns', 2.99)">Add To Cart</button>
+                    <button onclick="addCart('hotDogBuns', 2.99, 1)">Add To Cart</button>
                 </div>
                 <div class="col-sm-3">
                     <p>Ramen Cup $0.99</p>
-                    <button onclick="addCart('Ramen', 0.99)">Add To Cart</button>
+                    <button onclick="addCart('Ramen', 0.99, 1)">Add To Cart</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 receipt_List">
+                    <span><p id="receipt"></p><p id="receipt2"></p></span>
                 </div>
             </div>
         </div>

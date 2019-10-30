@@ -11,20 +11,69 @@
 //     console.log(cart);
 // }
 /*
+    var cart = [
+        {
+            name: 'item 1',
 
+        }
+    ]
 */
 
-function addCart(item, cost) {
-    let cart = {
-        item: item,
-        cost: cost
-    };
-    // console.log(cart);
-    let reciept = document.createElement('P');
-    let reciePt2 = document.createElement('P');
-    reciept.innerHTML = cart.item;
-    document.getElementById("receipt").appendChild(receipt);
-    reciept2.innerHTML = cart.cost;
-    document.getElementById("receipt2").appendChild(receipt2);
-}
+let cart = [];
 
+function addCart(item, cost, amount) {
+    if(!cart.length){
+    cart.push({  
+        item: item,
+        cost: cost,
+        amount: amount
+    });
+}
+else {
+    let found = false;
+    cart.forEach(qty => {
+        if(qty.item == item) {
+            qty.amount++;
+            found = true;
+        }
+    });
+
+    if(!found){
+    cart.push({  
+        item,
+        cost,
+        amount: 1
+    });
+    }
+}
+    var number = document.getElementById("checkout");
+    var count = 0;
+    cart.forEach(checkout => {
+        count += checkout.amount;
+    });
+    number.innerHTML = count;
+
+    
+    let reciept = document.getElementById('receipt');
+    reciept.innerHTML = cart;
+}
+console.log(cart)
+
+/*
+let found = false;
+cart.forEach(cartItem => {
+    if(cartItem.item == item) {
+        cartItem.qty++;
+        found == true;
+    }
+});
+    if (!found) {
+        cart.push({  
+            item: item,
+            cost: cost,
+            quantity: 1
+        });
+    }
+
+
+*/
